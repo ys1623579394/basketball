@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>篮球网-首页</title>
+<script language="javascript" type="text/javascript">
+	function startTime()   
+			{   
+				var today=new Date();//定义日期对象   
+				var yyyy = today.getFullYear();//通过日期对象的getFullYear()方法返回年    
+				var MM = today.getMonth()+1;//通过日期对象的getMonth()方法返回月    
+				var dd = today.getDate();//通过日期对象的getDate()方法返回日     
+				var hh=today.getHours();//通过日期对象的getHours方法返回小时   
+				var mm=today.getMinutes();//通过日期对象的getMinutes方法返回分钟   
+				var ss=today.getSeconds();//通过日期对象的getSeconds方法返回秒   
+				// 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09   
+				MM=checkTime(MM);
+				dd=checkTime(dd);
+				mm=checkTime(mm);   
+				ss=checkTime(ss);    
+				var day; //用于保存星期（getDay()方法得到星期编号）
+				if(today.getDay()==0)   day   =   "星期日 " 
+				if(today.getDay()==1)   day   =   "星期一 " 
+				if(today.getDay()==2)   day   =   "星期二 " 
+				if(today.getDay()==3)   day   =   "星期三 " 
+				if(today.getDay()==4)   day   =   "星期四 " 
+				if(today.getDay()==5)   day   =   "星期五 " 
+				if(today.getDay()==6)   day   =   "星期六 " 
+				document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss+"   " + day;   
+				setTimeout('startTime()',1000);//每一秒中重新加载startTime()方法 
+			}   
+			
+			function checkTime(i)   
+			{   
+				if (i<10){
+					i="0" + i;
+				}   
+				  return i;
+			}  
+</script>
+<style type="text/css">
+body {
+	background-image: url(images/111.jpg);
+	background-repeat: no-repeat;
+}
+body,td,th {
+	color: #FF3;
+	font-family: "隶书";
+	font-size: 24px;
+}
+.ys1 {
+	font-size: 36px;
+	font-family: "黑体";
+	font-weight: bold;
+	color: #639;
+}
+.ys2 {
+	font-family: "宋体";
+	color: #6C6;
+}
+.ys3 {
+	font-weight: bold;
+	font-style: italic;
+	color: #3F0;
+}
+.ys4 {
+	color: #3FF;
+}
+a:link {
+	color: #F90;
+	text-decoration: none;
+}
+a:visited {
+	color: #F93;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF0;
+	text-decoration: none;
+}
+a:active {
+	color: #6C0;
+	text-decoration: none;
+}
+.ys5 {
+	font-size: 18px;
+	text-align: right;
+}
+.ys7 {
+	color: #F90;
+}
+</style>
+</head>
+
+<body onload="startTime()">
+<p class="ys1">欢迎光临我的篮球网</p>
+<!--<div style="background:black;width:300px;height:200px;margin:auto;"></div> -->
+<hr align="left" width="400" color="#330033" noshade="noshade" />
+<p class="ys2">想了解我与篮球的故事吗？<br />
+请点击下面的链接吧！</p>
+<p>&nbsp;</p>
+<p class="ys3"><a href="aboutme/me.html">我与篮球</a><br />
+  <a href="http://sports.qq.com/l/cba/CBAlist.htm" target="_blank">篮球新闻</a><br />
+  <a href="ballstar/ballstar1.html">篮球明星</a><br />
+  <a href="blog/blog.html">我的Blog</a><br />
+  <a href="qita/qita.html">友情链接</a><br />
+  <a href="Showimages/p4.html">画展Showtime</a><br />
+  <a href="javascript:while(1){alert('你已经中毒了！！！')}">老司机福利区</a><br />
+  <a href="mailto:1623579394@qq.com">与我联系Email</a><br />
+</p>
+<hr align="left" width="400" color="#330033" noshade="noshade" />
+<p>&nbsp;</p>
+<p>
+	更新时间：<font color="#33ffff"><span id="nowDateTimeSpan"></span></font>
+</p>
+<p class="ys5"><span class="ys5"><a href="javascript:window.external.addFavorite('index.html','篮球网')" class="ys5">收藏本站</a></span> &nbsp; &nbsp;</p>
+<p class="ys5"><span class="ys7"><span class="ys7">创作人</span><span class="ys5">：<a href="myself/maself.html" target="_blank">楊帥</a></span></span><br />
+</p>
+<embed src="绝对无敌-倪子冈.mp3" hidden="true" loop="100"></embed>
+</body>
+</html>

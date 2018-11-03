@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>留言簿</title>
+<style type="text/css" media="screen">
+
+
+textarea {
+	width:500px;
+	height:200px;
+	/*background-image:url(images/116.jpg)*/
+}
+from_item {
+	min-height:30px;
+	margin-top:5px;
+	text-indent:0;
+}
+</style>
+
+<script type="text/javascript">
+	function addInfo(){
+		var info=document.getElementById("t1");
+		var LStorage=window.localStorage;
+		if(LStorage.myBoard){
+			var date=new Date();
+			LStorage.myBoard+=t1.value+"\n发表时间:"+date.toLocaleString()+"\n";
+		}else {
+			var date=new Date();
+			LStorage.myBoard=t1.value+"\n发表时间:"+date.toLocaleString()+"\n";
+		}
+		upInfo();
+	}
+	function upInfo() {
+		var LStorage=window.localStorage;
+		var show = document.getElementById("show");
+		if(window.localStorage.myBoard) {
+			show.value=window.localStorage.getItem("myBoard");
+		}else {
+			show.value="未留言";
+		}
+	}
+	function cleanInfo() {
+		window.localStorage.removeItem("myBoard");
+		upInfo();
+	}
+</script>
+</head>
+
+<body>
+<div>
+<h1>留言簿</h1>
+<textarea id="t1"></textarea>
+<br/>
+<input type="button" class="from_item" onclick="addInfo()" value="发表留言"/>
+<input type="button" class="from_item" onclick="cleanInfo()" value="清除留言"/>
+<br/>
+<hr/>
+<textarea id="show" readonly="readonly"></textarea>
+</div>
+
+
+<embed src="被风吹过的夏天-金莎+林俊杰.mp3" hidden="true" loop="true"></embed> 
+</body>
+</html>
